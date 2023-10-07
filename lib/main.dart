@@ -9,6 +9,7 @@ class myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Homescreen(),
     );
   }
@@ -43,6 +44,7 @@ class _homestate extends State<Homescreen>{
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+
         elevation: 0,
         toolbarHeight: 70,
         actions: [
@@ -75,7 +77,7 @@ class _homestate extends State<Homescreen>{
               Stack(
                 children: <Widget>[
                   Container(
-                    height: 140,
+                    height: 120,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -141,7 +143,7 @@ class _homestate extends State<Homescreen>{
                     ),
                   ),
                   Positioned(
-                      top:80,
+                      top:70,
                       left: 100,
                       child: Row(
                         children: [
@@ -159,7 +161,7 @@ class _homestate extends State<Homescreen>{
                             });
                           },
                             child: Text("-",style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               color: Colors.grey,
 
 
@@ -183,7 +185,7 @@ class _homestate extends State<Homescreen>{
                             });
                           },
                             child: Text("+",style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               fontWeight: FontWeight.normal,
                               color: Colors.grey,
 
@@ -207,7 +209,7 @@ class _homestate extends State<Homescreen>{
 
                   Positioned(
                       right: 20,
-                      bottom:30,
+                      bottom:20,
                       child: Text("51\$" ,style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20
@@ -221,7 +223,7 @@ class _homestate extends State<Homescreen>{
               Stack(
                 children: <Widget>[
                   Container(
-                    height: 140,
+                    height: 120,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -287,7 +289,7 @@ class _homestate extends State<Homescreen>{
                     ),
                   ),
                   Positioned(
-                      top:80,
+                      top:70,
                       left: 100,
                       child: Row(
                         children: [
@@ -306,7 +308,7 @@ class _homestate extends State<Homescreen>{
                             });
                           },
                             child: Text("-",style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               color: Colors.grey,
 
 
@@ -330,7 +332,7 @@ class _homestate extends State<Homescreen>{
                             });
                           },
                             child: Text("+",style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               fontWeight: FontWeight.normal,
                               color: Colors.grey,
 
@@ -354,7 +356,7 @@ class _homestate extends State<Homescreen>{
 
                   Positioned(
                       right: 20,
-                      bottom:30,
+                      bottom:20,
                       child: Text("30\$" ,style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20
@@ -367,7 +369,7 @@ class _homestate extends State<Homescreen>{
               Stack(
                 children: <Widget>[
                   Container(
-                    height: 140,
+                    height: 120,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -433,7 +435,7 @@ class _homestate extends State<Homescreen>{
                     ),
                   ),
                   Positioned(
-                      top:80,
+                      top:65,
                       left: 100,
                       child: Row(
                         children: [
@@ -453,7 +455,7 @@ class _homestate extends State<Homescreen>{
                             });
                           },
                             child: Text("-",style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               color: Colors.grey,
 
 
@@ -477,7 +479,7 @@ class _homestate extends State<Homescreen>{
                             });
                           },
                             child: Text("+",style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               fontWeight: FontWeight.normal,
                               color: Colors.grey,
 
@@ -501,7 +503,7 @@ class _homestate extends State<Homescreen>{
 
                   Positioned(
                       right: 20,
-                      bottom:30,
+                      bottom:20,
                       child: Text("43\$" ,style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20
@@ -510,39 +512,63 @@ class _homestate extends State<Homescreen>{
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 60,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.white,
-                ),
+             Stack(
+                children:[
+                  Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                  ),
 
-                height: 40,
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Text("Total Amount",style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.grey
-                      ),),
-                      SizedBox(width: 180,),
-                      Text("$total",style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          fontSize: 20
+                  height: 40,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          child: Text("Total Amount",style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.grey
+                          ),),
+                        ),
 
-                      )
-                      ),
+                        Positioned(
+                          right: 0,
+                          child: Text("$total",style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20
+
+                          )
+                          ),
+                        ),
 
 
-                    ],
+                      ],
+                    ),
                   ),
                 ),
+                ]
               ),
+
+               SizedBox(height: 5,),
+              SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: ElevatedButton(onPressed: (){
+                    MySnackBar("CHECKED OUT!!!!! Thank you for being with us!!", context);
+                },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
+                    ),
+                    child: Text("Check Out")),
+              )
 
 
 
