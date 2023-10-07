@@ -46,7 +46,7 @@ class _homestate extends State<Homescreen>{
       appBar: AppBar(
 
         elevation: 0,
-        toolbarHeight: 70,
+        //toolbarHeight: 70,
         actions: [
           IconButton(onPressed: (){},
             icon: Icon(Icons.search,color: Colors.black,),
@@ -512,7 +512,7 @@ class _homestate extends State<Homescreen>{
                 ],
               ),
               SizedBox(
-                height: 60,
+                height: 80,
               ),
              Stack(
                 children:[
